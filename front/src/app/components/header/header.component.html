@@ -1,0 +1,24 @@
+<div
+  class="flex p-4 justify-between text-center items-center bg-gradient-to-r from-indigo-900 to-pink-700"
+>
+  <p class="text-base text-white">Gerenciamento de Funcionários</p>
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon class="text-white">menu</mat-icon>
+    <mat-menu #menu="matMenu">
+      <div class="border-t border-primary">
+        <button
+          class="text-sm leading-6 justify-center dark:text-white"
+          mat-menu-item
+        >
+          <a> Cadastre-se </a>
+        </button>
+        <button
+          class="text-sm font-semibold leading-6 justify-center"
+          mat-menu-item
+        >
+          <a> Login <span aria-hidden="true">&rarr;</span> </a>
+        </button>
+      </div>
+    </mat-menu>
+  </button>
+</div>

@@ -1,0 +1,38 @@
+<h1>{{ isEditMode ? "Editar Colaborador" : "Adicionar Colaborador" }}</h1>
+
+<div *ngIf="loading">Carregando...</div>
+
+<div class="bg-gray-400 border border-blue-500 p-10">
+  <form [formGroup]="colaboradorForm" *ngIf="!loading">
+    <div>
+      <label for="id">ID</label>
+      <input id="id" formControlName="id" [readonly]="isEditMode" />
+    </div>
+    <div>
+      <label for="nome">Nome</label>
+      <input id="nome" formControlName="nome" />
+    </div>
+    <div>
+      <label for="cpf">CPF</label>
+      <input id="cpf" formControlName="cpf" />
+    </div>
+    <div>
+      <label for="dataAdmissao">Data de Admissão</label>
+      <input id="dataAdmissao" formControlName="dataAdmissao" />
+    </div>
+    <div>
+      <label for="remuneracao">Remuneração</label>
+      <input id="remuneracao" formControlName="remuneracao" />
+    </div>
+    <div>
+      <label for="cargoDescricao">Cargo</label>
+      <input id="cargoDescricao" formControlName="cargo.descricao" />
+    </div>
+    <button type="button" (click)="saveColaborador()">
+      {{ isEditMode ? "Atualizar" : "Adicionar" }}
+    </button>
+    <button type="button" *ngIf="isEditMode" (click)="deleteColaborador()">
+      Deletar
+    </button>
+  </form>
+</div>

@@ -1,0 +1,50 @@
+<section>
+  <div>
+    <app-header></app-header>
+  </div>
+  <div>
+    <h1>Lista dos colaboradores</h1>
+  </div>
+
+  <div class="mat-elevation-z8 div-table">
+    <table
+      mat-table
+      [dataSource]="tabela"
+      class="mat-table"
+      [style]="{
+        'background-color': 'bisque'
+      }"
+    >
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let row">{{ row.nome }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cpf">
+        <th mat-header-cell *matHeaderCellDef>CPF</th>
+        <td mat-cell *matCellDef="let row">{{ row.cpf }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataAdmissao">
+        <th mat-header-cell *matHeaderCellDef>Data de Admissão</th>
+        <td mat-cell *matCellDef="let row">{{ row.dataAdmissao }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="remuneracao">
+        <th mat-header-cell *matHeaderCellDef>Remuneração</th>
+        <td mat-cell *matCellDef="let row">{{ row.remuneracao }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cargo">
+        <th mat-header-cell *matHeaderCellDef>Cargo</th>
+        <td mat-cell *matCellDef="let row">{{ row.cargo.descricao }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let colaborador; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <div>
+    <app-footer></app-footer>
+  </div>
+</section>
